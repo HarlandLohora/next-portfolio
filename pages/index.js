@@ -1,12 +1,7 @@
-import Link from 'next/link';
-const Index = () => (
-  <div>
-    <Link href="/about">
-      <a>About Me</a>
-    </Link>
-    <h1>Home</h1>
-    <p>Welcome to the home page</p>
-  </div>
-);
+import Layout from '../components/Layout';
 
-export default Index;
+export default () => (
+  <Layout title="Homex">
+    <p>Welcome to the home page</p>
+  </Layout>
+);
