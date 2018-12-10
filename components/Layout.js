@@ -1,10 +1,26 @@
-import Link from 'next/link';
-import Head from 'next/head';
+import Link      from 'next/link';
+import Head      from 'next/head';
+import Router    from 'next/router';
+import NProgress from 'nprogress';
+
+Router.onRouteChangeStart = (url) => {
+  console.log(url);
+  NProgress.start();
+}
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+}
+
+Router.onChangeError = () => {
+  NProgrss.done();
+}
 export default ({ title, children }) => (
   <div className="root">
     <Head>
       <title>Harland Lohora</title>
       <link rel="icon" href="/static/img/favicon.png"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"/>
     </Head>
     <header>
     <Link href="/"><a>Home </a></Link>
